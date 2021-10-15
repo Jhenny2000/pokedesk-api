@@ -1,7 +1,7 @@
 .containerCards{
-    width: auto;
-    height: 500px;
-    /* background-color: aqua; */
+    width: 2004px;
+    height: auto;
+    background-color: aqua;
     align-items: center;
     justify-content: center;
     display: flex;

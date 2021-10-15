@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import '../Pokedex/style.css'
 import Pokedex from '../Pokedex'
-// import axios from 'axios';
+import axios from 'axios';
 
 class PokeGame extends Component {
 
@@ -35,28 +35,47 @@ class PokeGame extends Component {
 
             sumOne : 0,
             sumTwo : 0,
-            
-            theAmount : 5,
-            total : theAmount * 2,
-            pokemonListId : [],
-            listApi : []
+
+            // theAmount : 6,
+            // total : theAmount * 2,
+            // pokemonListId : [],
+            listApi : [],
+            setPokemonList : [],
+            maoUm : [],
+            maoDois : []
         }
 
     }
 
     sortPokemon(){
-        
+        const idPokemon = Math.floor((Math.random() * 897) + 1)
+    
+        return idPokemon
+    
     }
 
-    getPokemon(){
-        for(let i = 1 ; i <= this.state.total; i++){
+    async getPokemon(){
+
+        const theAmount = prompt('Coloque um valor')
+        const totalPokemon = theAmount * 2
+        const pokemonListId = []
             
-        }
-    }
+        for(let i = 1 ; i <= totalPokemon; i++){
+            const pokemonId = this.sortPokemon()
 
-    random() {
+            pokemonListId.push(pokemonId)
+        }
+
+        for(const id of pokemonListId){
+            const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
+            this.state.listApi.push(response.data)
+
+        }
+
+        this.setState({setPokemonList : this.state.listApi})
+
         const handOne = []
-        const handTwo = this.state.list
+        const handTwo = this.state.setPokemonList
 
         while (handOne.length < handTwo.length) {
             const newPokemon = Math.floor(Math.random() * handTwo.length);
@@ -65,8 +84,6 @@ class PokeGame extends Component {
             handOne.push(pokemon);    
         }
 
-        // ele agenda uma atualização para o objeto state
-        
         const sum1 = handOne.reduce((exp, quantidade) =>
             exp + quantidade.base_experience, 0)
 
@@ -74,25 +91,25 @@ class PokeGame extends Component {
 
             exp + quantidade.base_experience, 0)
 
-            this.setState({hand1 : handOne , hand2 : handTwo, sumOne : sum1 , sumTwo : sum2})
+            this.setState({maoUm : handOne , maoDois : handTwo, sumOne : sum1 , sumTwo : sum2})
 
     }
 
+
     
     componentDidMount(){
-
-        this.random();
+        this.getPokemon();
     }
 
     render() {
         return (
             <>
                 <h1 className='total'>{this.state.sumOne}</h1>
-                <Pokedex pokemons={this.state.hand1} win={this.state.sumOne > this.state.sumTwo}/>
+                <Pokedex pokemons={this.state.maoUm} win={this.state.sumOne > this.state.sumTwo}/>
                 
 
                 <h1 className='total'>{this.state.sumTwo}</h1>
-                <Pokedex pokemons={this.state.hand2} win={this.state.sumTwo > this.state.sumOne}/>
+                <Pokedex pokemons={this.state.maoDois} win={this.state.sumTwo > this.state.sumOne}/>
                 
 
             </>

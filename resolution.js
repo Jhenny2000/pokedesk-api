@@ -4,6 +4,18 @@ import Pokedex from '../Pokedex';
 import axios from 'axios';
 
 function Pokemon () {
+
+    // this.state = {
+    //     pokemonList: [],
+    //     hand1: [],
+    //     hand2: []
+    // }
+
+    // this.state.hand1
+    // this.setState({
+    //     hand1: [1,2,3]
+    // })
+
     const [pokemonList, setPokemonList] = useState([]);
     const [hand1, setHand1] = useState([]);
     const [hand2, setHand2] = useState([]);
@@ -32,6 +44,7 @@ function Pokemon () {
         }
         setPokemonList(lista);
     }
+
     function separarPokemon() {
         const primeriaMao = [];
         const segundaMao = [...pokemonList];
