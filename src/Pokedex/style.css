@@ -1,16 +1,16 @@
 .containerCards{
-    width: auto;
-    height: 400px;
+    /* width: auto; */
+    height: auto;
     /* background-color: aqua; */
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    /* justify-content: center; */
     display: flex;
     padding-right: 20px;
     /* border: 1px solid black; */
 }
 
 .card{
-    width: 300px;
+    /* width: 300px; */
     height: auto;
     /* background-color: blueviolet; */
     margin-left: 25px;
@@ -47,6 +47,7 @@ p{
     color: #888282;
     font-weight: bold;
     margin: 0px;
+    margin-bottom: 5px;
 }
 
 .type{
@@ -86,4 +87,10 @@ h1{
 
 .vencedor{
     color: #1be44d;
+}
+
+.teste{
+    width: 150px;
+    height: 120px;
+    background-color: #1be44d;
 }

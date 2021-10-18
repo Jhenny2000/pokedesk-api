@@ -69,7 +69,6 @@ class PokeGame extends Component {
         for(const id of pokemonListId){
             const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
             this.state.listApi.push(response.data)
-
         }
 
         this.setState({setPokemonList : this.state.listApi})
@@ -81,7 +80,7 @@ class PokeGame extends Component {
             const newPokemon = Math.floor(Math.random() * handTwo.length);
             const pokemon = handTwo.splice(newPokemon, 1)[0]
             
-            handOne.push(pokemon);    
+            handOne.push(pokemon);   
         }
 
         const sum1 = handOne.reduce((exp, quantidade) =>
@@ -92,26 +91,28 @@ class PokeGame extends Component {
             exp + quantidade.base_experience, 0)
 
             this.setState({maoUm : handOne , maoDois : handTwo, sumOne : sum1 , sumTwo : sum2})
+            
 
     }
 
 
     
     componentDidMount(){
-        this.getPokemon();
+        this.getPokemon(console.log(this.state.setPokemonList));
+        
     }
 
     render() {
         return (
             <>
+
                 <h1 className='total'>{this.state.sumOne}</h1>
                 <Pokedex pokemons={this.state.maoUm} win={this.state.sumOne > this.state.sumTwo}/>
-                
 
+                
                 <h1 className='total'>{this.state.sumTwo}</h1>
-                <Pokedex pokemons={this.state.maoDois} win={this.state.sumTwo > this.state.sumOne}/>
+                 <Pokedex pokemons={this.state.maoDois} win={this.state.sumTwo > this.state.sumOne}/>
                 
-
             </>
             
         );
