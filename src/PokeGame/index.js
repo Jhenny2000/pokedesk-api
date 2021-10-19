@@ -33,20 +33,23 @@ class PokeGame extends Component {
                 {id: 133, name: 'Eevee', type: 'normal', base_experience: 65}
             ],
 
+            // state vazia para colocar a soma da primeira pokedex
             sumOne : 0,
+            // state vazia para colocar a soma da segunda pokedex
             sumTwo : 0,
-
-            // theAmount : 6,
-            // total : theAmount * 2,
-            // pokemonListId : [],
+            // state com array vazio para colocar a lisa ineteira da api
             listApi : [],
+            // state com array vazio para receber a lista de pokemons
             setPokemonList : [],
             maoUm : [],
-            maoDois : []
+            maoDois : [],
+            // state com array vazio para receber a lista de tipos pokemons
+            typeList : []
         }
 
     }
 
+    // metodo para pegar o id dos 897 pokemons e randomizar eles adicionando + 1 
     sortPokemon(){
         const idPokemon = Math.floor((Math.random() * 897) + 1)
     
@@ -56,7 +59,9 @@ class PokeGame extends Component {
 
     async getPokemon(){
 
+        // const quantidade para pegar o valor do prompt
         const theAmount = prompt('Coloque um valor')
+        // const com o total dos pokemons na tela. Pegando a quantidade e multiplicando por 2 (2 pokedex)
         const totalPokemon = theAmount * 2
         const pokemonListId = []
             
@@ -98,7 +103,7 @@ class PokeGame extends Component {
 
     
     componentDidMount(){
-        this.getPokemon(console.log(this.state.setPokemonList));
+        this.getPokemon();
         
     }
 

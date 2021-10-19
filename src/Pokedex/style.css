@@ -36,7 +36,7 @@
 
 .info{
     width: auto;
-    height: 70px;
+    height: auto;
     /* background-color: cadetblue; */
     margin-top: 20px;
     margin-bottom: 20px;
@@ -52,7 +52,7 @@ p{
 
 .type{
     width: auto;
-    height: 25px;
+    height: auto;
     /* background-color: chartreuse; */
     margin-bottom: 10px;
 }
