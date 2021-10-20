@@ -1,25 +1,23 @@
 .containerCards{
     width: 1320px;
     height: auto;
-    /* background-color: aqua; */
-    /* align-items: center; */
     justify-content: center;
-    /* display: flex; */
-    /* flex-direction: row; */
+    display: flex;
+    margin-top: 40px;
+    margin-bottom: 45px;
     padding-right: 20px;
-    /* border: 1px solid black; */
     flex-wrap: wrap;
 }
 
 .card{
-    width: 215px;
+    width: 239px;
     height: auto;
     /* background-color: blueviolet; */
-    /* margin-left: 25px; */
+    margin-left: 25px;
     border-radius: 20px;
     box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
     margin-bottom: 25px;
-;
+    padding-top: 1px;
 }
 
 .namePoke{
@@ -32,17 +30,18 @@
 }
 
 .imgPoke{
-    /* width: 150px; */
-    /* height: 150px; */
+    width: 150px; 
+    height: 150px;
     /* background-color: hotpink; */
 }
 
 .info{
     width: auto;
-    /* height: 70px; */
+    height: auto;
     /* background-color: cadetblue; */
     margin-top: 20px;
     margin-bottom: 20px;
+    padding-bottom: 25px
 }
 
 p{
@@ -54,7 +53,7 @@ p{
 
 .type{
     width: auto;
-    /* height: 25px; */
+    height: auto;
     /* background-color: chartreuse; */
     margin-bottom: 10px;
 }
@@ -63,4 +62,13 @@ p{
     width: auto;
     height: 25px;
     /* background-color: chartreuse; */
+}
+
+.detalhes{
+    width: auto;
+    height: 280px;
+    /* background-color: cadetblue; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
 }
