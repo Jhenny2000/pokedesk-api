@@ -1,6 +1,6 @@
 import React from 'react';
-import { Component } from 'react';
-import Card from '../Card';
+import { Component } from 'react'
+import Card from '../Card/cardF';
 
 class Pokedex extends Component{
     // constructor(props){
