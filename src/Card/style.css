@@ -18,6 +18,9 @@
     box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
     margin-bottom: 25px;
     padding-top: 1px;
+    cursor: pointer;
+    justify-content: center;
+    display: grid;
 }
 
 .namePoke{
@@ -65,8 +68,8 @@ p{
 }
 
 .detalhes{
-    width: auto;
-    height: 280px;
+    width: 200px;
+    height: 230px;
     /* background-color: cadetblue; */
     margin-top: 20px;
     margin-bottom: 20px;

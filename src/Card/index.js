@@ -72,23 +72,25 @@ class Card extends Component {
                         </div>
                     </div>
                     <div className='card'  onClick={this.modalClick}>
-                        <diiv className='namePoke'>
+                        <div className='namePoke'>
                            <h2>{this.props.pokemon?.name}</h2>
-                        </diiv>
-                        <div className='type'>
-                            <p>Abilities: {this.abilities().join(', ')}</p>
                         </div>
-                        <div className='type'>
-                            <p>Height: {this.props.pokemon?.height}</p>
-                        </div>
-                        <div className='type'>
-                            <p>Weight: {this.props.pokemon?.weight}</p>
-                        </div>
-                        <div className='type'>
-                            <p>Type: {this.types().join(', ')}</p>
-                        </div>
-                        <div className='type'>
-                            <p>EXP: {this.props.pokemon?.base_experience}</p>
+                        <div className='detalhes'>
+                            <div className='type'>
+                                <p>Abilities: {this.abilities().join(', ')}</p>
+                            </div>
+                            <div className='type'>
+                                <p>Height: {this.props.pokemon?.height}m</p>
+                            </div>
+                            <div className='type'>
+                                <p>Weight: {this.props.pokemon?.weight}kg</p>
+                            </div>
+                            <div className='type'>
+                                <p>Type: {this.types().join(', ')}</p>
+                            </div>
+                            <div className='type'>
+                                <p>EXP: {this.props.pokemon?.base_experience}</p>
+                            </div>
                         </div>
                     </div>
                  </ReactCardFlip>
